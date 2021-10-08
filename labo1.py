@@ -67,7 +67,7 @@ def getUnit(name):
             elif name == "Реальное дифференцирующее звено":
                 unit = matlab.tf([k, 0], [t, 1])
             elif name == "Идеальное дифференцирующее звено":
-                unit = matlab.tf([k, 0], [1 / 100000, 1])
+                unit = matlab.tf([k, 0], [1 / 1000, 1])
             elif name == "Интегрирующее звено":
                 unit = matlab.tf([1], [t, 0])
 
