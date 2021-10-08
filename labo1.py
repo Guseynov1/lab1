@@ -4,6 +4,8 @@ import numpy as numpy
 import math as math
 import colorama as color
 
+
+# Метод выбора звена
 def choise():
     inertialessUnitName = "Безынерционное звено"
     aperiodicUnitName = "Апериодическое звено"
@@ -14,6 +16,7 @@ def choise():
 
     needNewChoise = True
 
+# Ввод команд в терминале
     while needNewChoise:
         print(color.Style.RESET_ALL)
         userInput = input("Введите номер команды: \n"
@@ -48,6 +51,8 @@ def choise():
             needNewChoise = True
     return name
 
+
+# Математическое описание звена по его имени
 def getUnit(name):
 
     needNewChoise = True
@@ -76,6 +81,7 @@ def getUnit(name):
             needNewChoise = True
     return unit
 
+# Построение графиков
 def graph(num, title, y, x):
     pyplot.subplot(2,1, num)
     pyplot.grid(True)
@@ -102,7 +108,7 @@ graph(1, "Переходная характеристика", y, x)
 [y, x] = matlab.impulse(unit, timeLine)
 graph(2, "Импульсная характеристика", y, x)
 
-
+# АЧХ и ФЧХ
 pyplot.show()
 matlab.bode(unit, dB=False)
 pyplot.plot()
